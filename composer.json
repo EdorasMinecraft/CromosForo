@@ -1,0 +1,42 @@
+{
+    "name": "cadiducho/edoras-cromos",
+    "description": "Añade cromos a los perfiles de los usuarios",
+    "keywords": [
+        "flarum"
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "require": {
+      "flarum/core": "^0.1.0-beta.15",
+      "fof/components": ">=0.2.0",
+        "guzzlehttp/guzzle": "^7.2"
+    },
+    "support": {
+      "issues": "https://github.com/EdorasMinecraft/Cromos-Foro/issues",
+      "source": "https://github.com/EdorasMinecraft/Cromos-Foro",
+      "forum": "https://foro.edoras.es"
+    },
+    "homepage": "https://edoras.es",
+    "authors": [
+      {
+        "name": "Cadiducho",
+        "email": "cadiducho@gmail.com",
+        "role": "Developer"
+      }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Cadiducho\\CromosForo\\": "src/"
+        }
+    },
+    "extra": {
+      "flarum-extension": {
+        "title": "Edoras Cromos",
+        "icon": {
+          "name": "fas fa-certificate",
+          "backgroundColor": "#4D698E",
+          "color": "#009688"
+        }
+      }
+    }
+}
