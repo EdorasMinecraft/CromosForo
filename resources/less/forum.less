@@ -1,20 +1,6 @@
 .EdorasCromos-widget {
     padding: 0;
-/*
-    .EdorasCromosList {
-        padding: 0;
-        list-style: none;
-        display: grid;
-        grid-gap: 10px;
-        grid-template-columns: repeat(auto-fit, 90px);
-        margin-bottom: 0;
 
-        > li {
-            text-align: left;
-            position: relative;
-            display: block;
-        }
-    }*/
     .EdorasCromosList {
         display: flex;
         margin-bottom: 0;
@@ -28,7 +14,9 @@
     }
 }
 
-
+/**
+ * Estilos generales y, en concreto, visualizados en un perfil
+ */
 .EdorasCromosListItem {
     transition: .15s ease-in-out;
 
@@ -45,11 +33,31 @@
     }
 
     .EdorasCromosList-image {
-        width: 100px;
-        height: 100px;
+        width: 156px;
+        height: 227px;
+        margin-right: 10px;
     }
 
     a:hover {
         text-decoration: none;
+    }
+}
+
+/**
+ * Para cuando se visualiza en la card de un post
+ */
+.UserCard--popover {
+    .EdorasCromosList-title {
+        display: block;
+        text-align: center;
+        margin-top: 2px;
+        color: @tooltip-color;
+        font-size: 12px;
+    }
+
+    .EdorasCromosList-image {
+        width: 78px;
+        height: 113.5px;
+        margin-right: 5px;
     }
 }
