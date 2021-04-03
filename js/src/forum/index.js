@@ -22,14 +22,15 @@ app.initializers.add('edoras-cromos', () => {
             'cromos',
             UserCromos.component({
                 user,
-            })
+            }),
+            -10
         );
     });
 });
 
 function findCromos(user) {
     let req = new XMLHttpRequest();
-    req.open('GET', "https://edoras.es/api/cromos/user/" + user.attribute('displayName'), true);
+    req.open('GET', "https://edoras.es/api/cromos/user/" + user.attribute('displayName') + "/visible", true);
     req.onreadystatechange = function (aEvt) {
         if (req.readyState === 4) {
             if (req.status === 200) {

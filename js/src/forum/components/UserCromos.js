@@ -36,7 +36,11 @@ export default class UserCromos extends Component {
                 return (
                     <div className="EdorasCromosListItem">
                         <div className="EdorasCromosListItem-content">
-                            <img className="EdorasCromosList-image" src={'https://edoras.es/img/cromos/' + cromo.url} alt={cromo.nombre}/><span className="EdorasCromosList-title">{cromo.nombre}</span>
+                            <a href={'https://edoras.es/cromos.php?cromo=' + cromo.id} target="_blank">
+                                <img className="EdorasCromosList-image"
+                                     src={'https://edoras.es/img/cromos/' + cromo.url}
+                                     alt={cromo.nombre}/>
+                            </a>
                         </div>
                     </div>
                 )
