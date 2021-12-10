@@ -28,18 +28,30 @@ app.initializers.add('edoras-cromos', () => {
     });
 });
 
+/**
+ * Search the Cromos for the given User
+ * @param user { object } - username from the user Model
+ * @returns null
+ */
 function findCromos(user) {
-    let req = new XMLHttpRequest();
-    req.open('GET', "https://edoras.es/api/cromos/user/" + user.attribute('displayName') + "/visible", true);
-    req.onreadystatechange = function (aEvt) {
-        if (req.readyState === 4) {
-            if (req.status === 200) {
-                let response = JSON.parse(req.response);
-                if (response.success) {
-                    user.cromos = response.result;
-                }
+    const name = user?.attribute('displayName');
+    if (!name) return null;
+
+    const HOST = `https://edoras.es/`;
+    const ENDPOINT = `api/cromos/user/`;
+
+    const url = `${HOST}${ENDPOINT}${name}/visible`
+
+
+    fetch(url, {})
+        .then(response => response.json())
+        .then(response => {
+            if (response?.success) {
+                user.cromos = response.result;
             }
-        }
-    };
-    req.send(null);
+            // TODO: Handle response error
+        })
+        .catch(error => console.error(error))
+    return null
 }
+
