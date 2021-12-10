@@ -11,12 +11,7 @@
 
 namespace Cadiducho\CromosForo;
 
-use Flarum\Api\Serializer\UserSerializer;
 use Flarum\Extend;
-use Flarum\User\Event\Saving;
-use Flarum\User\User;
-use Cadiducho\CromosForo\Listeners\AddUserCromosAttribute;
-use Cadiducho\CromosForo\Listeners\SaveUserCromosSelection;
 
 return [
     (new Extend\Frontend('forum'))
@@ -25,13 +20,4 @@ return [
 
     (new Extend\Frontend('admin'))
         ->js(__DIR__.'/js/dist/admin.js'),
-
-    (new Extend\Event())
-        ->listen(Saving::class, SaveUserCromosSelection::class),
-
-    (new Extend\ApiSerializer(UserSerializer::class))
-        ->mutate(AddUserCromosAttribute::class),
-
-    (new Extend\Policy())
-        ->modelPolicy(User::class, Access\UserPolicy::class),
 ];

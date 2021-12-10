@@ -1,5 +1,4 @@
 import {extend} from 'flarum/extend';
-import 'autolink-js';
 import UserCard from 'flarum/components/UserCard';
 import User from 'flarum/models/User';
 import Model from 'flarum/Model';
