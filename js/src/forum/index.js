@@ -10,10 +10,6 @@ app.initializers.add('edoras-cromos', () => {
     extend(UserCard.prototype, 'infoItems', function(items) {
         let user = this.attrs.user;
 
-        if (!user.attribute('canViewCromos')) {
-            return;
-        }
-
         //app.store.find('cromos', ).then(console.log);
         findCromos(user);
 
