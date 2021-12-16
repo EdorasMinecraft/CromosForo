@@ -1,0 +1,42 @@
+
+.EdorasCromosListAll {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+
+    list-style: none;
+    padding: 0;
+}
+
+.EdorasCromosListAllItem {
+    transition: .15s ease-in-out;
+    margin-bottom: 1.5rem;
+    margin-right: 10px;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.EdorasCromosListAllItem-name {
+    font-weight: bold;
+    margin-top: 0;
+    display: block;
+    text-align: center;
+}
+
+.EdorasCromosListAllItem-image {
+    width: @cromoWidth;
+    height: @cromoHeight;
+    margin-right: 10px;
+
+    @media only screen and (max-width: 600px) {
+        width: (@cromoWidth * .6);
+        height: (@cromoHeight * .6);
+        margin-right: 4px;
+    }
+}
+
+a:hover {
+    text-decoration: none;
+}
